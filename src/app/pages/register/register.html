@@ -1,0 +1,123 @@
+<!-- <div class="container">
+    <h2>Register</h2>
+
+    <form (ngSubmit)="onSubmit()">
+        <input type="email" placeholder="Email" name="email" [(ngModel)]="email" required />
+        <br />
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="password" required />
+        <br />
+        <button type="submit">Register</button>
+    </form>
+
+    <p *ngIf="error" style="color: red">{{ error }}</p>
+    <p *ngIf="success" style="color: green">{{ success }}</p>
+</div> -->
+<!-- 
+
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Create an Account</h2>
+        <p>Join us to search and purchase company documents</p>
+
+        <form (ngSubmit)="onSubmit()">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com" name="email" [(ngModel)]="email" required />
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="********" name="password" [(ngModel)]="password" required />
+            </div>
+            
+            <button type="submit" class="primary-button">Register</button>
+        </form>
+
+        <p *ngIf="error" class="error-message">{{ error }}</p>
+        <p *ngIf="success" class="success-message">{{ success }}</p>
+
+        <p class="auth-switch">Already have an account? <a routerLink="/login">Login here</a></p>
+    </div>
+</div> -->
+
+<div class="auth-container">
+  <div class="auth-box">
+    <h2 *ngIf="!otpSent">Create an Account</h2>
+    <h2 *ngIf="otpSent">Verify OTP</h2>
+
+    <!-- Step 1: Email + Password -->
+    <form *ngIf="!otpSent">
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="********"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+      </div>
+      <!-- -----------------------25/07/2025---------------- -->
+      <div class="input-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="********"
+          name="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          required
+        />
+      </div>
+      <!-- ------------------------------------------------------- -->
+      <button type="button" class="primary-button" (click)="sendOtp()">
+        Send OTP
+      </button>
+    </form>
+
+    <!-- Step 2: Enter OTP -->
+    <form *ngIf="otpSent">
+      <div class="input-group">
+        <label for="otp">Enter OTP</label>
+        <input type="text" id="otp" [(ngModel)]="otp" name="otp" required />
+      </div>
+
+      <button
+        type="button"
+        class="primary-button"
+        (click)="verifyOtpAndRegister()"
+      >
+        Verify & Register
+      </button>
+    </form>
+
+    <!-- Messages -->
+    <p *ngIf="error" class="error-message">{{ error }}</p>
+    <p *ngIf="success" class="success-message">{{ success }}</p>
+    <!-- -----------------------25/07/2025---------------- -->
+    <!-- Only show password mismatch from one source -->
+    <p *ngIf="passwordMismatch" class="error-message">Passwords do not match</p>
+
+    <!-- Show other errors only if NOT password mismatch -->
+    <p *ngIf="!passwordMismatch && error" class="error-message">{{ error }}</p>
+
+    <!-- ------------------------------------------------------- -->
+
+    <!-- Login link -->
+    <p class="auth-switch">
+      Already have an account? <a routerLink="/login">Login here</a>
+    </p>
+  </div>
+</div>

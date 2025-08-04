@@ -1,0 +1,52 @@
+<!-- <div class="container">
+  <h2>🔍 Search Company by CIN</h2>
+
+  <form (ngSubmit)="searchCompany()">
+    <input type="text" [(ngModel)]="cin" name="cin" placeholder="Enter CIN" required />
+    <button type="submit">Search</button>
+  </form>
+
+  <div *ngIf="error" style="color: red;">{{ error }}</div>
+
+  <div *ngFor="let c of companies; let i = index" class="card">
+    <input type="checkbox" [checked]="c.selected" (change)="toggleSelection(i)" />
+    <strong>{{ c.company_name }}</strong> ({{ c.cin }})<br />
+    Date of Incorporation: {{ c.date_of_incorporation }}<br />
+    Price: ₹{{ c.price }}
+  </div>
+
+  <br />
+  <button (click)="buySelected()">Buy Now</button>
+</div> -->
+
+
+<div class="page-container">
+  <div class="search-section">
+    <h2>🔍 Search Company by CIN</h2>
+
+    <form (ngSubmit)="searchCompany()" class="search-form">
+      <input type="text" [(ngModel)]="cin" name="cin" placeholder="Enter CIN (e.g., U72200PN2018PTC176503)" required />
+      <button type="submit" class="primary-button search-button">Search</button>
+    </form>
+
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  </div>
+
+  <div class="companies-list">
+    <div *ngFor="let c of companies; let i = index" class="company-card">
+      <div class="card-header">
+        <input type="checkbox" [checked]="c.selected" (change)="toggleSelection(i)" />
+        <strong class="company-name">{{ c.company_name }}</strong>
+        <span class="company-cin">({{ c.cin }})</span>
+      </div>
+      <div class="card-details">
+        <p>Date of Incorporation: <strong>{{ c.date_of_incorporation }}</strong></p>
+        <p class="price">Price: <strong>₹{{ c.price | number:'1.2-2' }}</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="companies.length > 0" class="buy-now-sticky">
+    <button (click)="buySelected()" class="primary-button large-button">Buy Selected Companies</button>
+  </div>
+</div>

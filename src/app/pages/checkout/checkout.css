@@ -1,0 +1,110 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top, not center */
+    min-height: calc(100vh - 60px); /* Adjust based on navbar height */
+    padding: 30px 20px;
+    background-color: #f4f7f6;
+}
+
+.checkout-summary {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.checkout-summary h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.checkout-summary .sub-heading {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.company-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    border-top: 1px solid #eee;
+}
+
+.company-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.company-details {
+    font-size: 1.1em;
+    color: #444;
+}
+
+.company-details strong {
+    color: #333;
+}
+
+.company-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.total-section {
+    padding-top: 20px;
+    border-top: 2px dashed #eee;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.total-section p {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-amount {
+    color: #3399cc;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.checkout-button {
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* Reusing utility classes */
+.primary-button { /* Copied from login.css */
+    background-color: #3399cc;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.primary-button:hover {
+    background-color: #2a80b0;
+    transform: translateY(-2px);
+}
+
+.large-button { /* Copied from search.css */
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 30px; /* Pill shape */
+}

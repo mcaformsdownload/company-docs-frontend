@@ -1,0 +1,33 @@
+<!-- <nav class="navbar">
+  <a routerLink="/search">🔍 Search</a>
+  <a routerLink="/status">📂 My Orders</a>
+
+  <div class="auth-links" *ngIf="isLoggedIn(); else guest">
+    <span class="user-email">{{ getEmail() }}</span>
+    <button (click)="logout()">Logout</button>
+  </div>
+
+  <ng-template #guest>
+    <a routerLink="/login">Login</a>
+    <a routerLink="/register">Register</a>
+  </ng-template>
+</nav> -->
+
+
+<nav class="navbar">
+  <a routerLink="/search" class="nav-brand">Company Docs</a>
+  <div class="nav-links">
+    <a routerLink="/search">🔍 Search</a>
+    <a routerLink="/status">📂 My Orders</a>
+  </div>
+
+  <div class="auth-links" *ngIf="isLoggedIn(); else guest">
+    <span class="user-email">{{ getEmail() }}</span>
+    <button (click)="logout()" class="logout-button">Logout</button>
+  </div>
+
+  <ng-template #guest>
+    <a routerLink="/login" class="nav-link">Login</a>
+    <a routerLink="/register" class="nav-link">Register</a>
+  </ng-template>
+</nav>

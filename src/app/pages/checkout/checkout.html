@@ -1,0 +1,34 @@
+<!-- <h2>Confirm Your Selection</h2>
+
+<ul>
+  <li *ngFor="let company of selectedCompanies">
+    <strong>{{ company.company_name }}</strong> ({{ company.cin }}) - ₹{{ company.price }}
+  </li>
+</ul>
+
+<p><strong>Total: ₹{{ totalAmount }}</strong></p>
+
+<button (click)="payNow()">Checkout & Pay</button> -->
+
+
+<div class="page-container">
+  <div class="checkout-summary">
+    <h2>Confirm Your Selection</h2>
+    <p class="sub-heading">Please review your selected documents before proceeding to payment.</p>
+
+    <ul class="company-list">
+      <li *ngFor="let company of selectedCompanies" class="company-item">
+        <span class="company-details">
+          <strong>{{ company.company_name }}</strong> ({{ company.cin }})
+        </span>
+        <span class="company-price">₹{{ company.price | number:'1.2-2' }}</span>
+      </li>
+    </ul>
+
+    <div class="total-section">
+      <p><strong>Total Amount:</strong> <span class="total-amount">₹{{ totalAmount | number:'1.2-2' }}</span></p>
+    </div>
+
+    <button (click)="payNow()" class="primary-button large-button checkout-button">Checkout & Pay</button>
+  </div>
+</div>

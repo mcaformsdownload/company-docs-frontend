@@ -1,0 +1,110 @@
+<!-- <div class="sleek-orders-container">
+  <header class="sleek-orders-header">
+    <h1 class="sleek-orders-title">Your Recent Orders</h1>
+    <p class="sleek-orders-subtitle">Track the status of your purchases.</p>
+  </header>
+
+  <div *ngIf="loading" class="sleek-info-message">
+    <div class="sleek-spinner"></div> Loading your order history...
+  </div>
+  <div *ngIf="error" class="sleek-error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && orders.length === 0" class="sleek-info-message sleek-no-orders-message">
+    <p>Looks like you haven't placed any orders yet. Start shopping now!</p>
+  </div>
+
+  <div class="sleek-orders-list">
+    <div *ngFor="let order of orders" class="sleek-order-card">
+      <div class="sleek-card-header">
+        <h3 class="sleek-order-cin">Order ID: <span>{{ order.cin }}</span></h3>
+        <span [class]="'sleek-status-pill sleek-status-' + order.status">{{ order.status | titlecase }}</span>
+      </div>
+      <div class="sleek-card-body">
+        <p><strong>Order Placed:</strong> {{ order.created_at | date:'longDate' }} at {{ order.created_at |
+          date:'shortTime' }}</p>
+      </div>
+      <div class="sleek-card-actions">
+        <button *ngIf="order.status === 'completed' && order.zip_url" (click)="downloadZip(order.zip_url)"
+          class="sleek-download-button">
+          <svg class="sleek-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63L2 9.24l5.46 4.73L5.82 21z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+          Download Files
+        </button>
+        <span *ngIf="order.status === 'pending'" class="sleek-processing-text">
+          <div class="sleek-mini-spinner"></div> Awaiting Processing
+        </span>
+
+        <span *ngIf="order.status === 'failed'" class="sleek-failed-text">
+          ❌ Order Failed. Refund will be initiated.
+        </span>
+
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<div class="sleek-orders-container">
+  <header class="sleek-orders-header">
+    <h1 class="sleek-orders-title">Your Recent Orders</h1>
+    <p class="sleek-orders-subtitle">Track the status of your purchases.</p>
+  </header>
+
+  <div *ngIf="loading" class="sleek-info-message">
+    <div class="sleek-spinner"></div> Loading your order history...
+  </div>
+  <div *ngIf="error" class="sleek-error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && orders.length === 0" class="sleek-info-message sleek-no-orders-message">
+    <p>Looks like you haven't placed any orders yet. Start shopping now!</p>
+  </div>
+
+  <div class="sleek-orders-list">
+    <div *ngFor="let order of orders" class="sleek-order-card">
+      <div class="sleek-card-header">
+        <h3 class="sleek-order-cin">Order ID: <span>{{ order.cin }}</span></h3>
+        <span [class]="'sleek-status-pill sleek-status-' + order.status">{{ order.status | titlecase }}</span>
+      </div>
+
+      <div class="sleek-card-body">
+        <p>
+          <strong>Order Placed:</strong>
+          {{ order.created_at | date:'longDate' }} at {{ order.created_at | date:'shortTime' }}
+        </p>
+      </div>
+
+      <div class="sleek-card-actions">
+        <!-- ✅ Show Download button only if status is completed and not expired -->
+        <button
+          *ngIf="order.status === 'completed' && order.zip_url"
+          (click)="downloadZip(order.zip_url)"
+          class="sleek-download-button">
+          <svg class="sleek-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63L2 9.24l5.46 4.73L5.82 21z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+          Download Files
+        </button>
+
+        <!-- ❌ Show Expired Message -->
+        <span *ngIf="order.status === 'completed' && !order.zip_url && order.expired" class="sleek-expired-text">
+          ⌛ Link expired (Available for 2 days only)
+        </span>
+
+        <!-- ⏳ Show Pending -->
+        <span *ngIf="order.status === 'pending'" class="sleek-processing-text">
+          <div class="sleek-mini-spinner"></div> Awaiting Processing
+        </span>
+
+        <!-- ❌ Show Failed -->
+        <span *ngIf="order.status === 'failed'" class="sleek-failed-text">
+          ❌ Order Failed. Refund will be initiated.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

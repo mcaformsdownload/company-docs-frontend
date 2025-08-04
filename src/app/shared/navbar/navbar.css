@@ -1,0 +1,106 @@
+.navbar {
+    background-color: #333; /* Dark background */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a, .auth-links a.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .auth-links a.nav-link:hover {
+    color: #3399cc; /* Highlight color on hover */
+}
+
+.nav-links a::after, .auth-links a.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #3399cc;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after, .auth-links a.nav-link:hover::after {
+    width: 100%;
+}
+
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-email {
+    color: #a7d9f2; /* Lighter blue for email */
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.logout-button {
+    background-color: #e74c3c; /* Red for logout */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .nav-brand {
+        margin-bottom: 15px;
+    }
+
+    .nav-links, .auth-links {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .auth-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

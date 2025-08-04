@@ -1,0 +1,300 @@
+/* Base Styles */
+body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f7f9fc; /* Very light blue-grey */
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Container */
+.sleek-orders-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* Header Section */
+.sleek-orders-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eef2f6; /* Subtle separator */
+}
+
+.sleek-orders-title {
+  font-size: 2.8em;
+  color: #2c3e50;
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.sleek-orders-subtitle {
+  font-size: 1.15em;
+  color: #6c7a89;
+  margin: 0;
+}
+
+/* Info and Error Messages */
+.sleek-info-message,
+.sleek-error-message {
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.sleek-info-message {
+  background-color: #e6f7ff; /* Light blue for info */
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+.sleek-error-message {
+  background-color: #fff1f0; /* Light red for error */
+  color: #ff4d4f;
+  border: 1px solid #ffa39e;
+}
+
+.sleek-no-orders-message {
+  text-align: center;
+  padding: 60px 30px;
+  font-size: 1.25em;
+  color: #555;
+  background-color: #fbfdff;
+  border: 2px dashed #d9e2ec;
+  border-radius: 12px;
+}
+
+.sleek-no-orders-message p {
+  margin-bottom: 25px;
+}
+
+.sleek-cta-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.sleek-cta-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Orders List */
+.sleek-orders-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Larger cards */
+  gap: 30px; /* More space between cards */
+}
+
+/* Order Card */
+.sleek-order-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sleek-order-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.sleek-card-header {
+  background-color: #fdfefe; /* Slightly off-white for header */
+  padding: 20px 25px;
+  border-bottom: 1px solid #eef2f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sleek-order-cin {
+  font-size: 1.35em;
+  margin: 0;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.sleek-order-cin span {
+  font-weight: 700;
+  color: #007bff; /* Highlight CIN */
+}
+
+.sleek-status-pill {
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sleek-status-completed {
+  background-color: #52c41a; /* Bright green */
+}
+
+.sleek-status-pending {
+  background-color: #faad14; /* Warm yellow/orange */
+  color: #333;
+}
+
+.sleek-status-shipped {
+  background-color: #1890ff; /* Azure blue */
+}
+
+.sleek-status-cancelled {
+  background-color: #f5222d; /* Crimson red */
+}
+
+.sleek-card-body {
+  padding: 25px;
+  flex-grow: 1;
+  color: #5a6673;
+  font-size: 1em;
+}
+
+.sleek-card-body strong {
+  color: #333;
+}
+
+.sleek-card-actions {
+  padding: 20px 25px;
+  background-color: #fdfefe;
+  border-top: 1px solid #eef2f6;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Buttons and Spans */
+.sleek-download-button {
+  background-color: #28a745; /* Green for download */
+  color: #ffffff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 8px rgba(40, 167, 69, 0.2);
+}
+
+.sleek-download-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(40, 167, 69, 0.3);
+}
+
+.sleek-download-button .sleek-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.sleek-processing-text {
+  font-style: italic;
+  color: #8c8c8c;
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Spinners */
+.sleek-spinner, .sleek-mini-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #1890ff; /* Blue for primary spinner */
+  border-radius: 50%;
+  animation: sleek-spin 1s linear infinite;
+}
+
+.sleek-spinner {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.sleek-mini-spinner {
+  width: 16px;
+  height: 16px;
+  border-width: 3px;
+  border-left-color: #8c8c8c; /* Grey for mini spinner */
+}
+
+@keyframes sleek-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sleek-orders-container {
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  .sleek-orders-title {
+    font-size: 2.2em;
+  }
+
+  .sleek-orders-list {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+
+  .sleek-card-header,
+  .sleek-card-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .sleek-download-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sleek-orders-title {
+    font-size: 1.8em;
+  }
+
+  .sleek-info-message,
+  .sleek-error-message,
+  .sleek-no-orders-message {
+    font-size: 1em;
+    padding: 15px 20px;
+  }
+}
+
+.sleek-failed-text {
+  color: red;
+  font-weight: bold;
+}
