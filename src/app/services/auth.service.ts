@@ -8,7 +8,7 @@ import { Company } from '../models/company.model';
   providedIn: 'root',
 })
 export class AuthService {
-  private BASE_URL = 'https://mca-download-proj-production.up.railway.app/';
+  private BASE_URL = 'https://mca-download-proj-production.up.railway.app';
 
   constructor(private http: HttpClient) {}
 
