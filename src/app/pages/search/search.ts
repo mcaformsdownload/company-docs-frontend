@@ -45,9 +45,9 @@ export class SearchComponent {
         const diff = today.getTime() - incorporationDate.getTime();
         const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
 
-        let price = 2;
-        if (age <= 2) price = 2.1;
-        else if (age <= 5) price = 2.2;
+        let price = 129;
+        if (age <= 2) price = 199;
+        else if (age <= 5) price = 249;
 
         const newCompany: Company = {
           ...res,
