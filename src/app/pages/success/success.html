@@ -1,0 +1,25 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6 text-center">
+      <div class="card border-0 shadow bg-white">
+        <div class="card-body p-5">
+          <div class="display-1 text-dark mb-4">
+            <i class="bi bi-check-circle"></i>
+          </div>
+          <h2 class="text-dark mb-3">Payment Successful!</h2>
+          <p class="text-muted mb-4">
+            Your documents are being processed. We'll notify you when they're ready for download.
+          </p>
+          <div class="d-grid gap-3">
+            <button (click)="goToStatus()" class="btn btn-dark btn-lg">
+              <i class="bi bi-list-check me-1"></i>View Order Status
+            </button>
+            <a routerLink="/search" class="btn btn-outline-dark">
+              <i class="bi bi-search me-1"></i>Search More Companies
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
